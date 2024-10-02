@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <limits.h>
-#include <ctype.h>
 
 int myAtoi(const char *s) {
 
@@ -38,10 +37,14 @@ int myAtoi(const char *s) {
 
 
 int main() {
-    printf("%d\n", myAtoi("42")); 
-    printf("%d\n", myAtoi("-042"));
-    printf("%d\n", myAtoi("1337c0d3"));
-    printf("%d\n", myAtoi("0-1"));   
-    printf("%d\n", myAtoi("words and 987")); 
-    return 0;
+    char input[100];
+
+    printf("Ingrese una cadena para convertir a entero: ");
+    fgets(input, sizeof(input), stdin);
+
+    int resultado = myAtoi(input);
+
+    printf("El número convertido es: %d\n", resultado);
+
+    return 0;
 }
