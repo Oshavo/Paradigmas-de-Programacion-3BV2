@@ -12,4 +12,4 @@ while s==0:
     if potencia>num:
         print("La potencia de 2 mas cercana a ",num," es ",(k-1))
         s=1
-    k=+1
+    k+=1
