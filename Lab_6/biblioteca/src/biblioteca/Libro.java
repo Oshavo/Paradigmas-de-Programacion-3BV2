@@ -1,4 +1,6 @@
-// Libro.java
+package biblioteca;
+import java.util.ArrayList;
+
 public class Libro {
     private String titulo;
     private String autor;

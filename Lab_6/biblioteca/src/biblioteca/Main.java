@@ -1,4 +1,4 @@
-// Main.java
+package biblioteca;
 import java.util.Scanner;
 
 public class Main {
@@ -8,26 +8,26 @@ public class Main {
         int opcion;
 
         do {
-            System.out.println("\n--- Menú de Biblioteca ---");
+            System.out.println("\n--- Menu de Biblioteca ---");
             System.out.println("1. Agregar libro");
             System.out.println("2. Mostrar libros");
             System.out.println("3. Prestar libro");
             System.out.println("4. Devolver libro");
             System.out.println("5. Salir");
-            System.out.print("Elige una opción: ");
+            System.out.print("Elige una opcion: ");
             opcion = scanner.nextInt();
-            scanner.nextLine(); // Consumir la nueva línea
+            scanner.nextLine(); 
 
             switch (opcion) {
                 case 1:
-                    System.out.print("Introduce el título del libro: ");
+                    System.out.print("Introduce el titulo del libro: ");
                     String titulo = scanner.nextLine();
                     System.out.print("Introduce el autor del libro: ");
                     String autor = scanner.nextLine();
                     System.out.print("Introduce el ISBN del libro: ");
                     String isbn = scanner.nextLine();
                     biblioteca.agregarLibro(new Libro(titulo, autor, isbn));
-                    System.out.println("Libro agregado con éxito.");
+                    System.out.println("Libro agregado con exito.");
                     break;
 
                 case 2:
@@ -39,9 +39,9 @@ public class Main {
                     System.out.print("Introduce el ISBN del libro a prestar: ");
                     String isbnPrestar = scanner.nextLine();
                     if (biblioteca.prestarLibro(isbnPrestar)) {
-                        System.out.println("Libro prestado con éxito.");
+                        System.out.println("Libro prestado con exito.");
                     } else {
-                        System.out.println("El libro no está disponible para préstamo o no existe.");
+                        System.out.println("El libro no esta disponible para prestamo o no existe.");
                     }
                     break;
 
@@ -49,7 +49,7 @@ public class Main {
                     System.out.print("Introduce el ISBN del libro a devolver: ");
                     String isbnDevolver = scanner.nextLine();
                     if (biblioteca.devolverLibro(isbnDevolver)) {
-                        System.out.println("Libro devuelto con éxito.");
+                        System.out.println("Libro devuelto con exito.");
                     } else {
                         System.out.println("El libro no estaba prestado o no existe.");
                     }
@@ -60,7 +60,7 @@ public class Main {
                     break;
 
                 default:
-                    System.out.println("Opción no válida, intenta de nuevo.");
+                    System.out.println("Opcion no valida, intenta de nuevo.");
                     break;
             }
         } while (opcion != 5);
